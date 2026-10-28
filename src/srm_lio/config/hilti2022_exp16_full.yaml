@@ -1,0 +1,32 @@
+base_config: lio.yaml
+imu_topic: /imu/data
+lidar_topic: /hesai/pandar
+lidar_type: pointcloud2
+imu_acc_scale: 1.0
+imu_init_num: 800
+normalize_imu_acc: true
+lidar_filter_num: 2
+lidar_max_range: 60.0
+scan_resolution: 0.20
+na: 0.0192
+ng: 0.00345
+nba: 0.00093
+nbg: 0.00020
+r_il: [0.0, -1.0, 0.0, -1.0, 0.0, 0.0, 0.0, 0.0, -1.0]
+t_il: [-0.001, -0.00855, 0.055]
+enable_srda: true
+enable_ipmm: true
+enable_adaptive_observability: false
+enable_structure_subspace: false
+srda_min_reliability: 0.05
+srda_inlier_threshold: 0.10
+srda_robust_iterations: 5
+srda_enable_soft_gate: true
+# Exp16 contains a long, weakly constrained gallery transition. Keep robust
+# fitting conservative there and retain a denser, direction-balanced map.
+srda_gate_degeneracy_threshold: 0.93
+srda_gate_sharpness: 8.0
+ipmm_voxel_size: 0.40
+ipmm_point_budget: 1500
+ipmm_expansion_ratio: 0.30
+ipmm_full_direction_quota_ratio: 0.08
